@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="p5.min.js"></script>
+    <script src="index.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #2c0010;
+        font-family: "Share Tech Mono", monospace;
+        color: #ffe4ec;
+      }
+
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        filter: blur(8px);
+        opacity: 0.7;
+      }
+
+      .navbar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 40px;
+        background: #2c0010;
+      }
+
+      .logo {
+        font-size: 40px;
+        color: #ff4fa0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .biohazard {
+        width: 40px;
+        height: 40px;
+        background-color: #ff4fa0;
+        mask: url("https://upload.wikimedia.org/wikipedia/commons/7/77/Biohazard_symbol.svg")
+          no-repeat center;
+        -webkit-mask: url("https://upload.wikimedia.org/wikipedia/commons/7/77/Biohazard_symbol.svg")
+          no-repeat center;
+        mask-size: contain;
+        -webkit-mask-size: contain;
+      }
+
+      .nav-options {
+        display: flex;
+        gap: 25px;
+      }
+
+      .nav-options a {
+        color: #fff;
+        font-size: 20px;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-options a:hover {
+        color: #ff4fa0;
+      }
+
+      .main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        max-width: 600px;
+        padding: 40px;
+        border: 2px solid #ff4fa0;
+        background: rgba(20, 0, 10, 0.85);
+      }
+
+      .title {
+        font-size: 70px;
+        color: #fff;
+        margin-bottom: 20px;
+        animation: typing 3s steps(14), blink 0.5s step-end infinite alternate;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid #ff4fa0;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+
+      .subtitle {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #ffd5e8;
+      }
+
+      .author {
+        font-size: 18px;
+        margin-bottom: 30px;
+        color: #ffc0cb;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .buttons button {
+        padding: 10px 25px;
+        font-size: 18px;
+        background-color: #ff4fa0;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        transition: transform 0.3s, background-color 0.3s;
+      }
+
+      .buttons button:hover {
+        transform: scale(1.1);
+        background-color: #e04492;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <div class="biohazard"></div>
+        LIFE FORCE
+      </div>
+      <div class="nav-options">
+        <a href="#">Virus A</a>
+        <a href="#">Virus B</a>
+        <a href="#">Virus C</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="title">LIFE FORCE</div>
+      <div class="subtitle">Uncover the Absurd Unknown</div>
+      <div class="author">by Susavan Mondal</div>
+      <div class="buttons">
+        <button>About Life Force</button>
+        <button>Explore</button>
+      </div>
+    </div>
+  </body>
+</html>
